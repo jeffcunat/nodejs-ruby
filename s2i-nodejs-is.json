@@ -1,0 +1,30 @@
+{
+  "kind": "ImageStream",
+  "apiVersion": "v1",
+  "metadata": {
+  "name": "nodejs-ruby",
+  "annotations": {
+    "openshift.io/display-name": "nodejs-ruby"
+    }
+  },
+  "spec": {
+    "dockerImageRepository": "docker.io/jfcunat/nodejs",
+    "tags": [
+       {
+        "name": "latest",
+        "from": {
+          "kind": "DockerImage",
+          "name": "docker.io/jfcunat/nodejs"
+        },
+        "annotations": {
+          "openshift.io/display-name": "nodejs with ruby, compass",
+          "description": "Expose a nodejs builder with ruby and compass",
+          "iconClass": "icon-nodejs",
+          "tags": "builder, nodejs, ruby, compass",
+          "supports":"nodejs",
+          "version":"4.x"
+        }
+      }
+    ]
+  }
+}
